@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${listOf}"></title>
+</head>
+<body>
+<h1 th:text="${listOf}"></h1>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Имя</td>
+        <td th:if="${users.getFirst().getPassword()} == true">Пароль</td>
+    </tr>
+    <tr th:each="user: ${users}">
+        <td th:text="${user.getUserId()}">ID</td>
+        <td th:text="${user.getUsername()}">Имя</td>
+        <td th:text="${user.getPassword()}">Пароль</td>
+    </tr>
+</table>
+<div style="position: absolute;top:50%;left:50%;justify-content: center">
+    <button><a href="/home">Вернуться на главную</a></button>
+</div>
+</body>
+</html>

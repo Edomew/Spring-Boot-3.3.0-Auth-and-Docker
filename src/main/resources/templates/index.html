@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+</head>
+<body>
+
+<div style="display: flex; align-items: center; flex-direction: column">
+    <a th:if="${role} =='ROLE_ADMIN'" href="/admin/users">
+        Пользователи
+    </a>
+    <a href="/user/">Приветствие</a>
+    <div th:switch="${loginStatus}">
+        <div th:case="false">
+
+            <a th:href="@{/auth/login}">
+                Войти
+            </a>
+            <a th:href="@{/auth/registration}">
+                Регистрация
+            </a>
+        </div>
+        <a th:case="true" th:href="@{/logout}">
+            Выйти
+        </a>
+    </div>
+</div>
+</body>
+</html>

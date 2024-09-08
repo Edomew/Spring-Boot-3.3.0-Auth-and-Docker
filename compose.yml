@@ -1,0 +1,10 @@
+services:
+     mysql:
+          image: mysql:latest
+          environment:
+               MYSQL_DATABASE: auth
+               MYSQL_USER: Edomew
+               MYSQL_PASSWORD: Edomews
+               MYSQL_ROOT_PASSWORD: Edomews
+          ports:
+               - "3307:3306"
